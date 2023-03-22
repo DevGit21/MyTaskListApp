@@ -52,13 +52,12 @@ const TaskComponent: React.FC<Props> = ({ task, onRemoveTask, onRenameTask, onTo
       <li className="list-group-item" style={{ display: 'flex', alignItems: 'center'}} >
         <span style={{textDecoration: task.completed ? 'line-through' : 'none' }}>{task.name}</span>
         {
-          !task.completed && <button className="m-1 btn btn-lg btn-outline-primary" onClick={handleEditClick}><i className="fa fa-edit"></i></button>
+          !task.completed && <button className="m-1 btn btn-lg btn-outline-primary" onClick={handleEditClick}>Edit</button>
         }
         <button className="m-1 btn btn-lg btn-outline-primary" onClick={handleToggleCompletionClick}>
           {task.completed ? 'Unmark Completed' : 'Mark Completed'}
         </button>
-        <button  className="fa fa-times"
-            style={{ background: 'none', border: 'none' }} onClick={handleRemoveClick} />
+        <button className="m-1 btn btn-lg btn-outline-primary" onClick={handleRemoveClick} >Remove</button>
       </li>
     );
   }
